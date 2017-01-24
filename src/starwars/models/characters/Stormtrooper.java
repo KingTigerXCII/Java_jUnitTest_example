@@ -1,7 +1,8 @@
-package starwars.characters;
+package starwars.models.characters;
 
 public class Stormtrooper {
-	String identificationNumber;
+	
+	private String identificationNumber;
 
 	public String getIdentificationNumber() {
 		return identificationNumber;

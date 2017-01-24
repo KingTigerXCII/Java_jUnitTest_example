@@ -17,4 +17,5 @@ public enum JediRank {
 	public String getJediRank() {
 		return this.rank;
 	}
+	
 }

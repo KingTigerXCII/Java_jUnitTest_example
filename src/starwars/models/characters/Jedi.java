@@ -1,9 +1,12 @@
-package starwars.characters;
+package starwars.models.characters;
+
+import starwars.constants.JediRank;
 
 public class Jedi {
-	String lightsaber;
-	String name;
-	String rank;
+	
+	private String lightsaber;
+	private String name;
+	private JediRank rank;
 	
 	public Jedi(String name, String colorOfLightsaber) {
 		this.setName(name);
@@ -26,6 +29,14 @@ public class Jedi {
 		this.name = name;
 	}
 	
+	public JediRank getRank() {
+		return rank;
+	}
+
+	public void setRank(JediRank rank) {
+		this.rank = rank;
+	}
+
 	public void useLightsaber() {
 		System.out.printf("The jedi uses his %s lightsaber -|---", this.getLightsaber());
 	}
