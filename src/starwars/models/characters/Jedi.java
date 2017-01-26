@@ -8,9 +8,10 @@ public class Jedi {
 	private String name;
 	private JediRank rank;
 	
-	public Jedi(String name, String colorOfLightsaber) {
+	public Jedi(String name, String colorOfLightsaber, JediRank rank) {
 		this.setName(name);
 		this.setLightsaber(colorOfLightsaber);
+		this.setRank(rank);
 	}
 
 	public String getLightsaber() {
@@ -39,9 +40,11 @@ public class Jedi {
 
 	public void useLightsaber() {
 		System.out.printf("The jedi uses his %s lightsaber -|---", this.getLightsaber());
+		System.out.println();
 	}
 	
 	public void useForce() {
 		System.out.printf("Jedi %s use his magic", this.getName());
+		System.out.println();
 	}
 }
