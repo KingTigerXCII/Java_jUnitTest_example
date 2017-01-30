@@ -1,7 +1,8 @@
 package starwars.main;
 
-import starwars.business.FightSimulator;
 import starwars.constants.JediRank;
+import starwars.factories.FightManagerFactory;
+import starwars.interfaces.FightManager;
 import starwars.models.characters.Jedi;
 import starwars.models.characters.Stormtrooper;
 
@@ -10,7 +11,7 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Stormtrooper[] stormtroopers = new Stormtrooper[5];
+		Stormtrooper[] stormtroopers = new Stormtrooper[50];
 		Jedi[] jedis = new Jedi[5]; 
 
 		for(int i=0; i < stormtroopers.length; i++) {
@@ -21,8 +22,8 @@ public class Main {
 			jedis[i] = new Jedi("Obi Wan" + i, "blue", JediRank.JEDI_MASTER);	
 		}
 		
-		FightSimulator fightSimulator = new FightSimulator();
-		fightSimulator.stormAgainstJedi(stormtroopers, jedis);
+		FightManager fightOfDeathStarManager = FightManagerFactory.Create();
+		fightOfDeathStarManager.stormAgainstJedi(stormtroopers, jedis);
 	}
 
 }

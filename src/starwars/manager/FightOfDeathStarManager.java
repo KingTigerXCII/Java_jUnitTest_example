@@ -1,9 +1,10 @@
-package starwars.business;
+package starwars.manager;
 
+import starwars.interfaces.FightManager;
 import starwars.models.characters.Jedi;
 import starwars.models.characters.Stormtrooper;
 
-public class FightSimulator {
+public class FightOfDeathStarManager implements FightManager {
 	
 	private int StormtrooperWins;
 	private int jediWins;
@@ -12,6 +13,9 @@ public class FightSimulator {
 		
 		if (jedis.length >= stormtroopers.length) {
 			this.setJediWins(this.getJediWins() + 1);
+		}
+		else if (stormtroopers.length >= (10*jedis.length)) {
+			this.setStormtrooperWins(this.getStormtrooperWins() + 1);
 		}
 		
 		this.showResults();
