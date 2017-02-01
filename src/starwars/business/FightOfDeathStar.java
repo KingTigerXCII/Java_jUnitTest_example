@@ -3,9 +3,11 @@ package starwars.business;
 import starwars.interfaces.Fight;
 import starwars.models.characters.Jedi;
 import starwars.models.characters.Stormtrooper;
+import starwars.output.ConsoleOutput;
 
 public class FightOfDeathStar implements Fight {
 	
+	private ConsoleOutput consoleOutput;
 	private int StormtrooperWins;
 	private int jediWins;
 
@@ -13,18 +15,12 @@ public class FightOfDeathStar implements Fight {
 		
 		if (jedis.length >= stormtroopers.length) {
 			this.setJediWins(this.getJediWins() + 1);
+			consoleOutput.jediWins();
 		}
 		else if (stormtroopers.length >= (10*jedis.length)) {
 			this.setStormtrooperWins(this.getStormtrooperWins() + 1);
+			consoleOutput.stormtrooperWins();
 		}
-		
-		this.showResults();
-	}
-	
-	public void showResults() {
-		System.out.println("Jedi wins: " + this.getJediWins());
-		System.out.println("----------------------------");
-		System.out.printf("Stormtrooper wins: " + this.getStormtrooperWins());
 	}
 
 	public int getJediWins() {
