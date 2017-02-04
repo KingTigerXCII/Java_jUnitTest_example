@@ -1,14 +1,23 @@
 package starwars.factories;
 
 import starwars.business.FightOfDeathStar;
+import starwars.constants.FightType;
 import starwars.interfaces.Fight;
 
 public class FightFactory {
 
-	private static Fight fightOfDeathstar = new FightOfDeathStar();
-	
-	public static Fight Create() {
-		return fightOfDeathstar;
+	public static Fight getFight(FightType fightType) {
+		
+		if (fightType == null) {
+			return null;
+		}
+		
+		if (fightType == FightType.Deathstar) {
+			return new FightOfDeathStar();
+		}
+		
+		return null;
+		
 	}
 	
 }

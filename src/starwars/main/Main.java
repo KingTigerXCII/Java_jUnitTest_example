@@ -1,5 +1,6 @@
 package starwars.main;
 
+import starwars.constants.FightType;
 import starwars.constants.JediRank;
 import starwars.factories.FightFactory;
 import starwars.interfaces.Fight;
@@ -22,8 +23,8 @@ public class Main {
 			jedis[i] = new Jedi("Obi Wan" + i, "blue", JediRank.JEDI_MASTER);	
 		}
 		
-		Fight fightOfDeathStarManager = FightFactory.Create();
-		fightOfDeathStarManager.stormAgainstJedi(stormtroopers, jedis);
+		Fight fightOfDeathStar = FightFactory.getFight(FightType.Deathstar);
+		fightOfDeathStar.stormAgainstJedi(stormtroopers, jedis);
 	}
 
 }
