@@ -7,7 +7,7 @@ import starwars.output.ConsoleOutput;
 
 public class FightOfDeathStar implements Fight {
 	
-	private ConsoleOutput consoleOutput;
+	private ConsoleOutput consoleOutput = new ConsoleOutput();
 	private int StormtrooperWins;
 	private int jediWins;
 
