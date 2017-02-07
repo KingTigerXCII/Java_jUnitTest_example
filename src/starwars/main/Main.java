@@ -25,6 +25,7 @@ public class Main {
 		
 		Fight fightOfDeathStar = FightFactory.getFight(FightType.Deathstar);
 		fightOfDeathStar.stormAgainstJedi(stormtroopers, jedis);
+		fightOfDeathStar.showFightScore();
 	}
 
 }

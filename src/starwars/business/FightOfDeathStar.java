@@ -1,5 +1,7 @@
 package starwars.business;
 
+import java.util.HashMap;
+
 import starwars.interfaces.Fight;
 import starwars.models.characters.Jedi;
 import starwars.models.characters.Stormtrooper;
@@ -8,35 +10,38 @@ import starwars.output.ConsoleOutput;
 public class FightOfDeathStar implements Fight {
 	
 	private ConsoleOutput consoleOutput = new ConsoleOutput();
-	private int StormtrooperWins;
-	private int jediWins;
+	private static final HashMap<String, Integer> scores = new HashMap<String, Integer>() {/**
+		 * 
+		 */
+		private static final long serialVersionUID = -8997518799530234124L;
+
+	{
+		
+		put("Jedi", 0);
+		put("Sith", 0);
+		put("Stormtrooper", 0);
+		
+	}};
+
 
 	public void stormAgainstJedi(Stormtrooper[] stormtroopers, Jedi[] jedis) {
 		
 		if (jedis.length >= stormtroopers.length) {
-			this.setJediWins(this.getJediWins() + 1);
-			consoleOutput.jediWins();
+			scores.put("Jedi", scores.get("Jedi") + 1);
+			consoleOutput.showJediWins();
 		}
 		else if (stormtroopers.length >= (10*jedis.length)) {
-			this.setStormtrooperWins(this.getStormtrooperWins() + 1);
-			consoleOutput.stormtrooperWins();
+			scores.put("Stormtrooper", scores.get("Stormtrooper") + 1);
+			consoleOutput.showStormtrooperWins();
 		}
 	}
-
-	public int getJediWins() {
-		return jediWins;
+	
+	public void showFightScore() {
+		consoleOutput.showFightScore(this.getScores());
 	}
 
-	private void setJediWins(int jediWins) {
-		this.jediWins = jediWins;
-	}
-
-	public int getStormtrooperWins() {
-		return StormtrooperWins;
-	}
-
-	private void setStormtrooperWins(int stormtrooperWins) {
-		StormtrooperWins = stormtrooperWins;
+	public HashMap<String, Integer> getScores() {
+		return scores;
 	}
 
 }

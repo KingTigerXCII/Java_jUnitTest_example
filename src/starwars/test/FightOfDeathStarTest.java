@@ -27,7 +27,8 @@ public class FightOfDeathStarTest {
 		}
 		
 		fightOfDeathStar.stormAgainstJedi(stormtroopers, jedis);
-		assertEquals(fightOfDeathStar.getJediWins(), 1);
+		int jediScore = fightOfDeathStar.getScores().get("Jedi");
+		assertEquals(jediScore, 1);
 	}
 	
 	@Test
@@ -46,6 +47,7 @@ public class FightOfDeathStarTest {
 		}
 		
 		fightOfDeathStar.stormAgainstJedi(stormtroopers, jedis);
-		assertEquals(fightOfDeathStar.getStormtrooperWins(), 1);
+		int stormtrooperScore = fightOfDeathStar.getScores().get("Stormtrooper");
+		assertEquals(stormtrooperScore, 1);
 	}
 }
