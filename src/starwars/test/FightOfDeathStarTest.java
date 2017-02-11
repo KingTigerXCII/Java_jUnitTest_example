@@ -4,8 +4,10 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import starwars.business.FightOfDeathStar;
+import starwars.constants.FightType;
 import starwars.constants.JediRank;
+import starwars.factories.FightFactory;
+import starwars.interfaces.Fight;
 import starwars.models.characters.Jedi;
 import starwars.models.characters.Stormtrooper;
 
@@ -13,7 +15,7 @@ public class FightOfDeathStarTest {
 
 	@Test
 	public void StormAgainstJedis_JediWins_IncreaseCountOfJediWins() {
-		FightOfDeathStar fightOfDeathStar = new FightOfDeathStar();
+		Fight fightOfDeathStar = FightFactory.getFight(FightType.Deathstar);
 		
 		Stormtrooper[] stormtroopers = new Stormtrooper[1];
 		Jedi[] jedis = new Jedi[5];
@@ -33,7 +35,7 @@ public class FightOfDeathStarTest {
 	
 	@Test
 	public void StormAgainstJedis_StormWins_IncreaseCountOfStormWins() {
-		FightOfDeathStar fightOfDeathStar = new FightOfDeathStar();
+		Fight fightOfDeathStar = FightFactory.getFight(FightType.Deathstar);
 		
 		Stormtrooper[] stormtroopers = new Stormtrooper[50];
 		Jedi[] jedis = new Jedi[5];
@@ -50,4 +52,5 @@ public class FightOfDeathStarTest {
 		int stormtrooperScore = fightOfDeathStar.getScores().get("Stormtrooper");
 		assertEquals(stormtrooperScore, 1);
 	}
+	
 }
