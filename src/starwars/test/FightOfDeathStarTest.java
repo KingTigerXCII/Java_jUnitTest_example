@@ -53,4 +53,24 @@ public class FightOfDeathStarTest {
 		assertEquals(stormtrooperScore, 1);
 	}
 	
+	@Test
+	public void StormAgainstJedis_ThrowsNullPointerException_ParameterAreNull() {
+		boolean isExceptionThrown = false;
+		
+		try {
+			
+			Fight fightOfDeathStar = FightFactory.getFight(FightType.Deathstar);
+			
+			Stormtrooper[] stormtroopers = null;
+			Jedi[] jedis = null;
+			
+			fightOfDeathStar.stormAgainstJedi(stormtroopers, jedis);
+			
+		} catch(NullPointerException ex) {
+			isExceptionThrown = true;
+		}
+		
+		assertTrue(isExceptionThrown);
+	}
+	
 }

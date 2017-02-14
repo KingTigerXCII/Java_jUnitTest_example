@@ -15,17 +15,14 @@ public class FightOfDeathStar implements Fight {
 		 */
 		private static final long serialVersionUID = -8997518799530234124L;
 
-	{
-		
+	{	
 		put("Jedi", 0);
 		put("Sith", 0);
-		put("Stormtrooper", 0);
-		
+		put("Stormtrooper", 0);		
 	}};
 
 
-	public void stormAgainstJedi(Stormtrooper[] stormtroopers, Jedi[] jedis) {
-		
+	public void stormAgainstJedi(Stormtrooper[] stormtroopers, Jedi[] jedis) {		
 		if (jedis.length >= stormtroopers.length) {
 			scores.put("Jedi", scores.get("Jedi") + 1);
 			consoleOutput.showJediWins();
