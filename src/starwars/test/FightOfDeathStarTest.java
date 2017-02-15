@@ -66,10 +66,55 @@ public class FightOfDeathStarTest {
 			
 			fightOfDeathStar.stormAgainstJedi(stormtroopers, jedis);
 			
-		} catch(NullPointerException ex) {
-			isExceptionThrown = true;
+		} catch(NullPointerException ex) {			
+			isExceptionThrown = true;			
 		}
+		assertTrue(isExceptionThrown);
+	}
+	
+	@Test
+	public void StormAgainstJedis_ThrowsNullPointerException_ParameterJediIsNull() {
+		boolean isExceptionThrown = false;
 		
+		try {
+			
+			Fight fightOfDeathStar = FightFactory.getFight(FightType.Deathstar);
+			
+			Stormtrooper[] stormtroopers = new Stormtrooper[1];
+			Jedi[] jedis = null;
+			
+			for(int i=0; i < stormtroopers.length; i++) {
+				stormtroopers[i] = new Stormtrooper("ST123" + i);			
+			}
+			
+			fightOfDeathStar.stormAgainstJedi(stormtroopers, jedis);
+			
+		} catch(NullPointerException ex) {			
+			isExceptionThrown = true;			
+		}
+		assertTrue(isExceptionThrown);
+	}
+	
+	@Test
+	public void StormAgainstJedis_ThrowsNullPointerException_ParameterStormIsNull() {
+		boolean isExceptionThrown = false;
+		
+		try {
+			
+			Fight fightOfDeathStar = FightFactory.getFight(FightType.Deathstar);
+			
+			Stormtrooper[] stormtroopers = null;
+			Jedi[] jedis = new Jedi[5];
+			
+			for(int i=0; i < jedis.length; i++) {
+				jedis[i] = new Jedi("Obi Wan" + i, "blue", JediRank.JEDI_MASTER);	
+			}
+			
+			fightOfDeathStar.stormAgainstJedi(stormtroopers, jedis);
+			
+		} catch(NullPointerException ex) {			
+			isExceptionThrown = true;			
+		}
 		assertTrue(isExceptionThrown);
 	}
 	
