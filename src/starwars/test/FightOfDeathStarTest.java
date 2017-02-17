@@ -54,7 +54,7 @@ public class FightOfDeathStarTest {
 	}
 	
 	@Test
-	public void StormAgainstJedis_ThrowsNullPointerException_ParameterAreNull() {
+	public void StormAgainstJedis_ThrowsNullPointerException_BothParameterAreNull() {
 		boolean isExceptionThrown = false;
 		
 		try {
