@@ -12,10 +12,14 @@ import starwars.models.characters.Jedi;
 import starwars.models.characters.Stormtrooper;
 
 public class FightOfDeathStarTest {
+	
+	private Fight GetNewFightOfDeathStar() {
+		return FightFactory.getFight(FightType.Deathstar);
+	}
 
 	@Test
 	public void StormAgainstJedis_JediWins_IncreaseCountOfJediWins() {
-		Fight fightOfDeathStar = FightFactory.getFight(FightType.Deathstar);
+		Fight fightOfDeathStar = GetNewFightOfDeathStar();
 		
 		Stormtrooper[] stormtroopers = new Stormtrooper[1];
 		Jedi[] jedis = new Jedi[5];
@@ -35,7 +39,7 @@ public class FightOfDeathStarTest {
 	
 	@Test
 	public void StormAgainstJedis_StormWins_IncreaseCountOfStormWins() {
-		Fight fightOfDeathStar = FightFactory.getFight(FightType.Deathstar);
+		Fight fightOfDeathStar = GetNewFightOfDeathStar();
 		
 		Stormtrooper[] stormtroopers = new Stormtrooper[50];
 		Jedi[] jedis = new Jedi[5];
@@ -59,7 +63,7 @@ public class FightOfDeathStarTest {
 		
 		try {
 			
-			Fight fightOfDeathStar = FightFactory.getFight(FightType.Deathstar);
+			Fight fightOfDeathStar = GetNewFightOfDeathStar();
 			
 			Stormtrooper[] stormtroopers = null;
 			Jedi[] jedis = null;
@@ -78,7 +82,7 @@ public class FightOfDeathStarTest {
 		
 		try {
 			
-			Fight fightOfDeathStar = FightFactory.getFight(FightType.Deathstar);
+			Fight fightOfDeathStar = GetNewFightOfDeathStar();
 			
 			Stormtrooper[] stormtroopers = new Stormtrooper[1];
 			Jedi[] jedis = null;
@@ -101,7 +105,7 @@ public class FightOfDeathStarTest {
 		
 		try {
 			
-			Fight fightOfDeathStar = FightFactory.getFight(FightType.Deathstar);
+			Fight fightOfDeathStar = GetNewFightOfDeathStar();
 			
 			Stormtrooper[] stormtroopers = null;
 			Jedi[] jedis = new Jedi[5];
