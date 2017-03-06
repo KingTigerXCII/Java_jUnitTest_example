@@ -1,4 +1,4 @@
-package starwars.business;
+package starwars.fights;
 
 import java.util.HashMap;
 

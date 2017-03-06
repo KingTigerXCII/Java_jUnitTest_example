@@ -1,7 +1,7 @@
 package starwars.factories;
 
-import starwars.business.FightOfDeathStar;
 import starwars.constants.FightType;
+import starwars.fights.FightOfDeathStar;
 import starwars.interfaces.Fight;
 
 public class FightFactory {
